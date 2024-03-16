@@ -14,10 +14,28 @@ const options = {
 
 axios.defaults.baseURL = url;
 
-export default async function fetchData(path, query = null) {
-  if(query) options.params.query = query;
+export async function fetchData() {
+  const response = await axios.get('trending/movie/day', options);
 
-  const response = await axios.get(path, options);
+  return response.data;
+}
+
+export async function fetchMovieData(movieId) {
+  const response = await axios.get(`movie/${movieId}`, options);
+
+  return response.data;
+}
+
+export async function fetchMovieReviews(movieId) {
+  const response = await axios.get(`movie/${movieId}/reviews`);
+
+  return response.data;
+}
+
+export async function searchMovie(query) {
+  options.params.query = query;
+
+  const response = await axios.get('search/movie', options);
 
   return response.data;
 }
