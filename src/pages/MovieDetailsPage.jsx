@@ -6,21 +6,27 @@ import {
   useLocation,
   useParams,
 } from 'react-router-dom';
-import fetchData from '../api';
+import { fetchMovieData } from '../api';
 
 const MovieDetailsPage = () => {
   const location = useLocation();
   const [movie, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
   const { movieId } = useParams();
   const backLinkHref = location.state?.from ?? '/';
 
   useEffect(() => {
     async function fetchedData() {
       try {
-        const data = await fetchData(`movie/${movieId}`);
+        setIsLoading(true);
+        setError(false);
+        const data = await fetchMovieData(movieId);
         setMovie(data);
       } catch (error) {
-        console.log(error);
+        setError(true);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -36,6 +42,8 @@ const MovieDetailsPage = () => {
       </button>
 
       <div>
+        {isLoading && <div>Loading...</div>}
+        {error && <div>Oops something went wrong! Try reload the page</div>}
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={`${movie.title} poster`}

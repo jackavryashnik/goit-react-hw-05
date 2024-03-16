@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import fetchData from '../api';
+import { searchMovie } from '../api';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
@@ -23,7 +23,7 @@ const MoviesPage = () => {
 
     async function fetchedData() {
       try {
-        const data = await fetchData('search/movie', query);
+        const data = await searchMovie(query);
         setMovies(data.results);
       } catch (error) {
         console.log(error);
