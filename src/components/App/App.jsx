@@ -2,8 +2,8 @@ import HomePage from '../../pages/HomePage/HomePage';
 import MoviesPage from '../../pages/MoviesPage';
 import MovieDetailsPage from '../../pages/MovieDetailsPage';
 import NotFoundPage from '../../pages/NotFoundPage';
-import MovieCast from '../MovieCast';
-import MovieReviews from '../MovieReviews';
+import MovieCast from '../MovieCast/MovieCast';
+import MovieReviews from '../MovieReviews/MovieReviews';
 import Navigation from '../Navigation/Navigation';
 import { Route, Routes } from 'react-router-dom';
 
