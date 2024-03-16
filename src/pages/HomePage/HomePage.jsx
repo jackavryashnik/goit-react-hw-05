@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import fetchData from '../../api';
-import { Link } from 'react-router-dom';
-import css from "./HomePage.module.css";
+import { Link, useLocation } from 'react-router-dom';
+import css from './HomePage.module.css';
 
 const HomePage = () => {
   const [data, setData] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchedData() {
@@ -18,7 +19,6 @@ const HomePage = () => {
 
     fetchedData();
   }, []);
-  console.log(data);
 
   if (!data) return;
 
@@ -29,7 +29,9 @@ const HomePage = () => {
         {data.map(el => {
           return (
             <li key={el.id} className={css.item}>
-              <Link to={`/movies/${el.id}`}>{el.title}</Link>
+              <Link to={`/movies/${el.id}`} state={{ from: location }}>
+                {el.title}
+              </Link>
             </li>
           );
         })}

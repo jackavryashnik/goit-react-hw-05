@@ -14,7 +14,9 @@ const options = {
 
 axios.defaults.baseURL = url;
 
-export default async function fetchData(path) {
+export default async function fetchData(path, query = null) {
+  if(query) options.params.query = query;
+
   const response = await axios.get(path, options);
 
   return response.data;
