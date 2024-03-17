@@ -36,7 +36,7 @@ const MovieCast = () => {
                   <div
                     width={240}
                     style={{
-                      'background-color': 'lightgray',
+                      backgroundColor: 'lightgray',
                       height: 360,
                       width: 240,
                     }}
