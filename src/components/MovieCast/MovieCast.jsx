@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { fetchMovieCast } from '../../api';
+import Error from '../Error/Error';
 import { useParams } from 'react-router-dom';
 import css from './MovieCast.module.css';
 
 const MovieCast = () => {
-  const [cast, setCast] = useState('');
+  const [cast, setCast] = useState([]);
   const { movieId } = useParams();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchedData() {
@@ -13,7 +15,7 @@ const MovieCast = () => {
         const data = await fetchMovieCast(movieId);
         setCast(data.cast);
       } catch (error) {
-        console.log('error');
+        setError(true);
       }
     }
 
@@ -22,7 +24,9 @@ const MovieCast = () => {
 
   return (
     <>
-      {cast && (
+      {error && <Error />}
+      {!cast.length && <div>This information has not been added yet</div>}
+      {cast.length && (
         <ul className={css.list}>
           {cast?.map(({ id, name, character, profile_path }) => (
             <li key={id}>

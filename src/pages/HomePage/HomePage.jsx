@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from '../../api';
 import MovieList from '../../components/MovieList/MovieList';
+import Error from '../../components/Error/Error';
 
 const HomePage = () => {
   const [data, setData] = useState(null);
@@ -23,7 +24,7 @@ const HomePage = () => {
   return (
     <main>
       <h1>Trending today</h1>
-      {error && <div>Oops something went wrong! Try reload the page</div>}
+      {error && <Error />}
       {data && <MovieList data={data} />}
     </main>
   );
