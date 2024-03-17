@@ -1,0 +1,7 @@
+.list {
+  padding: 16px 32px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 4px;
+}
