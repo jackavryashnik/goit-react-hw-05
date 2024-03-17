@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import {
   Link,
   NavLink,
@@ -7,6 +7,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { fetchMovieData } from '../api';
+import Loader from '../components/Loader/Loader';
 
 const MovieDetailsPage = () => {
   const location = useLocation();
@@ -81,7 +82,9 @@ const MovieDetailsPage = () => {
 
       <hr />
 
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
