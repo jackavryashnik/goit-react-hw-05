@@ -22,10 +22,8 @@ const MoviesPage = () => {
   };
 
   useEffect(() => {
-    if (searchParams.size && searchParams.get('query') !== query) {
-      setQuery(searchParams.get('query'));
-    }
     if (!query) return;
+    setQuery(searchParams.get('query'));
 
     async function fetchedData() {
       try {
