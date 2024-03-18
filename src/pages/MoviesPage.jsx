@@ -8,7 +8,6 @@ import Error from '../components/Error/Error';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [query, setQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [empty, setEmpty] = useState(false);
@@ -16,21 +15,20 @@ const MoviesPage = () => {
 
   const handleSubmit = (values, actions) => {
     const inputVale = values.query;
-    setQuery(inputVale);
     setSearchParams({ query: inputVale });
     actions.resetForm();
   };
 
   useEffect(() => {
-    if (!query) return;
-    setQuery(searchParams.get('query'));
+    const searchQuery = searchParams.get('query');
+    if (!searchQuery) return;
 
     async function fetchedData() {
       try {
         setEmpty(false);
         setMovies([]);
         setIsLoading(true);
-        const data = await searchMovie(query);
+        const data = await searchMovie(searchQuery);
         setMovies(data.results);
         if (!data.results.length) setEmpty(true);
       } catch (error) {
@@ -41,7 +39,7 @@ const MoviesPage = () => {
     }
 
     fetchedData();
-  }, [query, searchParams]);
+  }, [searchParams]);
 
   return (
     <>
