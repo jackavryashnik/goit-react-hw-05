@@ -1,21 +1,39 @@
-.header {
+.navWrapper {
     display: flex;
-    padding: 16px;
-    gap: 8px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
   }
   
+  .nav {
+    display: flex;
+    gap: 16px;
+  }
+
   .navLink {
     font-size: 18px;
+    padding: 16px 0;
     color: black;
     text-decoration: none;
+    transition: all 250ms ease-in-out;
   }
   
   .navLink:hover,
   .navLink:focus,
   .navLink.active {
-    color: crimson;
-    text-decoration: underline;
+    color: #8D090D;
   }
   
+  .active {
+    position: relative;
+    color: #8D090D;
+  }
+  .active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: #8D090D;
+  }

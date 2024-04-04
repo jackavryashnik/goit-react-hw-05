@@ -1,0 +1,11 @@
+.layout {
+    padding: 80px 32px 50px;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1440px;
+        padding-top: 96px;
+        padding: 96px 50px;
+    }
+  }
