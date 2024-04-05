@@ -1,0 +1,52 @@
+.poster_wrapper {
+    margin-bottom: 12px;
+}
+
+.poster {
+    width: 350px;
+    height: calc(350px * 1.4);
+}
+
+.title {
+    margin-bottom: 8px;
+    font-weight: 600;
+    width: 335px;
+    text-transform: uppercase;
+}
+
+.title,
+.votes {
+    color: black;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.votes {
+    font-size: 14px;
+}
+
+@media (min-width: 1280px) {
+    .poster {
+        width: calc((1280px - 64px - 40px)/3);
+        height: calc((1280px - 64px - 40px)/3 * 1.4);
+    }
+
+    .title {
+        width: calc((1280px - 64px - 40px)/3);
+    }
+}
+
+@media (min-width: 1440px) {
+    .poster {
+        width: calc((1280px - 64px - 40px)/4);
+        height: calc((1280px - 100px - 40px)/4 * 1.4);
+    }
+
+    .title {
+        width: calc((1280px - 64px - 40px)/4);
+    }
+}

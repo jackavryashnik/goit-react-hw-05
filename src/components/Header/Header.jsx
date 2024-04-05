@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import c from './Header.module.css';
+import css from './Header.module.css';
 
 const Header = ({ children }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -20,7 +20,7 @@ const Header = ({ children }) => {
     };
   }, [prevScrollPos]);
 
-  return <header className={clsx(c.header, !visible && c.hidden)}>{children}</header>;
+  return <header className={clsx(css.header, !visible && css.hidden)}>{children}</header>;
 };
 
 export default Header;

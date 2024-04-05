@@ -10,7 +10,7 @@ const MovieList = ({ data }) => {
       {data.map(movie => {
         return (
           <li key={movie.id} className={css.item}>
-            <Link to={`/movies/${movie.id}`} state={location}>
+            <Link to={`/movies/${movie.id}`} state={location} style={{textDecoration: 'none'}}>
               <MovieListItem movie={movie}/>
             </Link>
           </li>
