@@ -42,7 +42,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <button>
-        <Link to={backLinkHref.current}>Go back</Link>
+        <Link to={backLinkHref.current} style={{textDecoration: 'none'}}>Go back</Link>
       </button>
 
       <div>
@@ -73,10 +73,10 @@ const MovieDetailsPage = () => {
 
       <ul>
         <li>
-          <NavLink to="cast">Cast</NavLink>
+          <NavLink to="cast" style={{textDecoration: 'none'}}>Cast</NavLink>
         </li>
         <li>
-          <NavLink to="reviews">Reviews</NavLink>
+          <NavLink to="reviews" style={{textDecoration: 'none'}}>Reviews</NavLink>
         </li>
       </ul>
 
