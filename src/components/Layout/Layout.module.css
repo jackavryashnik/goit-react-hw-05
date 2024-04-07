@@ -1,5 +1,6 @@
 .layout {
     padding: 80px 32px 50px;
+    margin: 0 auto;
 }
 
 @media (min-width: 1440px) {
@@ -8,4 +9,4 @@
         padding-top: 96px;
         padding: 96px 50px;
     }
-  }
+}

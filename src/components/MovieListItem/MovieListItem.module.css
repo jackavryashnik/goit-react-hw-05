@@ -5,18 +5,22 @@
 .poster {
     width: 350px;
     height: calc(350px * 1.4);
+    transition: scale 250ms ease-in-out;
+}
+
+.movie_wrapper:hover .poster {
+    scale: 1.05;
 }
 
 .title {
     margin-bottom: 8px;
     font-weight: 600;
     width: 335px;
-    text-transform: uppercase;
 }
 
 .title,
 .votes {
-    color: black;
+    color: var(--white);
 }
 
 .rating {

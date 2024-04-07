@@ -5,8 +5,15 @@
   row-gap: 32px;
   column-gap: 48px;
 }
-.imageContainer {
+
+.item {
+  overflow: hidden;
+}
+
+.imageContainer,
+.actorDesc {
   width: 240px;
+  margin: 0 auto;
 }
 
 .actorDesc {
@@ -15,9 +22,14 @@
   gap: 2px;
   padding: 12px;
 }
+
 .name {
   font-weight: 700;
 }
+
 .character {
   font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
 }

@@ -22,12 +22,12 @@
   .navLink:hover,
   .navLink:focus,
   .navLink.active {
-    color: #8D090D;
+    color: var(--burgundy);
   }
   
   .active {
     position: relative;
-    color: #8D090D;
+    color: var(--burgundy);
   }
   .active::after {
     content: '';
@@ -36,5 +36,5 @@
     right: 0;
     bottom: 0;
     height: 3px;
-    background-color: #8D090D;
+    background-color: var(--burgundy);
   }
