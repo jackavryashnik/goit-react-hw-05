@@ -33,24 +33,26 @@
     font-size: 14px;
 }
 
-@media (min-width: 1280px) {
+
+@media (min-width: 768px) {
     .poster {
-        width: calc((1280px - 64px - 40px)/3);
-        height: calc((1280px - 64px - 40px)/3 * 1.4);
+        width: calc((768px - 64px - 20px)/2);
+        height: calc((768px - 64px - 20px)/2 * 1.4);
     }
 
     .title {
-        width: calc((1280px - 64px - 40px)/3);
+        font-size: 20px;
+        width: calc((768px - 64px - 20px)/2);
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1280px) {
     .poster {
-        width: calc((1280px - 64px - 40px)/4);
-        height: calc((1280px - 100px - 40px)/4 * 1.4);
+        width: calc((1280px - 64px - 60px)/3);
+        height: calc((1280px - 64px - 60px)/3 * 1.4);
     }
 
     .title {
-        width: calc((1280px - 64px - 40px)/4);
+        width: calc((1280px - 64px - 40px)/3);
     }
 }
