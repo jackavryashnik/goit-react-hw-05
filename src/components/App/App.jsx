@@ -1,4 +1,3 @@
-import NotFoundPage from '../../pages/NotFoundPage';
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Loader from '../Loader/Loader';
@@ -7,6 +6,7 @@ import Layout from '../Layout/Layout';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('../../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../../pages/MovieDetailsPage/MovieDetailsPage'));
+const NotFoundPage = lazy(() => import('../../pages/NotFoundPage/NotFoundPage'));
 const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
 const Navigation = lazy(() => import('../Navigation/Navigation'));
