@@ -12,6 +12,7 @@ import StarRate from '../../components/StarRate/StarRate'
 import { IoMdArrowRoundBack } from "react-icons/io";
 import css from './MovieDetailsPage.module.css'
 import clsx from 'clsx';
+import poster from '../../images/poster.png'
 
 
 
@@ -61,12 +62,17 @@ const MovieDetailsPage = () => {
       {error && <div>Oops something went wrong! Try reload the page</div>}
 
       <div className={css.movieInfo}>
-        {movie.poster_path && (
+        {movie.poster_path ? (
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={`${movie.title} poster`}
           />
-        )}
+        )
+      :
+      (<img
+        src={poster}
+        alt={`${movie.title} poster`}
+      />)}
         <div>
           <h2 className={css.title}>{movie.title}</h2>
           <hr />

@@ -1,11 +1,18 @@
 import css from './MovieListItem.module.css'
 import StarRate from '../StarRate/StarRate'
+import poster from '../../images/poster.png'
 
 const MovieListItem = ({ movie: { poster_path, title, vote_average, vote_count } }) => {
   return (
     <div className={css.movie_wrapper}>
       <div className={css.poster_wrapper}>
+        {poster_path ?
+          (
           <img className={css.poster} src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={`${title} poster`} width={335} height={500}/>
+          )
+          : (
+            <img className={css.poster} src={poster} alt={`${title} poster`} width={335} height={500}/>
+          )}
       </div>
       <div className={css.desc}>
         <p className={css.title}>{title}</p>
