@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Formik, Field, Form } from 'formik';
-import { searchMovie } from '../api';
+import { searchMovie } from '../../api';
 import { useSearchParams } from 'react-router-dom';
-import MovieList from '../components/MovieList/MovieList';
-import Loader from '../components/Loader/Loader';
-import Error from '../components/Error/Error';
+import MovieList from '../../components/MovieList/MovieList';
+import Loader from '../../components/Loader/Loader';
+import Error from '../../components/Error/Error';
+import css from './MoviesPage.module.css'
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -49,9 +50,11 @@ const MoviesPage = () => {
         }}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <Field name="query" />
-          <button type="submit">Search</button>
+        <Form className={css.search}>
+          <div className={css.formField}>
+            <Field name="query" className={css.input} placeholder="What are you looking for?"/>
+            <button className={css.button} type="submit">Search</button>
+          </div>
         </Form>
       </Formik>
 

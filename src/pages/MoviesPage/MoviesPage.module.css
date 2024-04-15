@@ -1,0 +1,85 @@
+  .button {
+    background-color: #1bba9a;
+    color: #fff;
+    font-weight: bold;
+    padding: .625rem .375rem;
+  }
+  
+  .button:focus,
+  .button:hover {
+    background-color: #1bba9a;
+  }
+  
+  .input ::placeholder {
+    color: #42454e;
+  }
+  
+  .input {
+    appearance: none;
+    border: none;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+  }
+  
+  .button {
+    appearance: textfield;
+    box-sizing: content-box;
+  }
+  
+  .button::-webkit-search-cancel-button,
+  .button::-webkit-search-decoration {
+    appearance: none;
+  }
+  
+  .button {
+    cursor: pointer;
+  }
+  
+  .formField {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .input {
+    flex-grow: 1;
+  }
+  
+  .search {
+    background-color: #42454e;
+    border-radius: #fff;
+    font-size: .75rem;
+    padding: .5rem;
+    margin-bottom: 32px;
+  }
+  
+  .search .input,
+  .search .button {
+    border-radius: .125rem;
+  }
+  
+  .search .input {
+    background-color: #fff;
+    color: #42454e;
+    padding: .625rem .375rem;
+  }
+
+  @media (min-width: 768px) {
+    .button {
+        width: 120px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .search {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .input,
+    .button {
+        font-size: 16px;
+    }
+  }
